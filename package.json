@@ -18,7 +18,7 @@
   "bugs": {
     "url": "https://github.com/carlosfrontend/linked-lists/issues"
   },
-  "homepage": "",
+  "homepage": "https://github.com/carlosfrontend/linked-lists?tab=readme-ov-file#linked-lists--the-odin-project-",
   "devDependencies": {
     "@babel/core": "^7.24.0",
     "@babel/preset-env": "^7.24.0",
