@@ -1,13 +1,9 @@
-# APP NAME ( Other content )
+# Linked Lists ( The Odin Project )
 ## The Odin Project
-A simple desciption
+This repository creates a simple linked list.
 
 Links:
 
-:white_check_mark: [Assigments](!#) :blue_book:
-
-:white_check_mark: [Live Preview](!#) :computer:
-
-:white_check_mark: [Code](!#) :eight_spoked_asterisk:
+:white_check_mark: [Assigments](https://www.theodinproject.com/lessons/javascript-linked-lists#assignment) :blue_book:
 
  Happy Coding!! :coffee: :rocket:

@@ -1,7 +1,7 @@
 {
-  "name": "",
+  "name": "linked-lists",
   "version": "1.0.0",
-  "description": "",
+  "description": "This repository creates a simple linked list",
   "main": "index.js",
   "private": true,
   "scripts": {
@@ -11,12 +11,12 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/carlosfrontend/linked-lists"
   },
   "author": "carlosfrontend",
   "license": "ISC",
   "bugs": {
-    "url": ""
+    "url": "https://github.com/carlosfrontend/linked-lists/issues"
   },
   "homepage": "",
   "devDependencies": {
