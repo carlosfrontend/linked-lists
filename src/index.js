@@ -26,10 +26,12 @@ console.log(myList.pop());
 console.log(myList.pop());
 console.log(myList.size());
 console.log(myList);
-myList.append({name:'Mike', last:'Ross'});
-myList.append([125,12,24,36]);
+myList.append('Mike');
+myList.append('Sarah');
+myList.append('Other');
 console.log(myList);
-console.log('\n#######################\n');
+console.log('\n#### CONTAINS A VALUE ###\n');
+console.log(myList.contains('Joss'));
 
 
 /* console.log('\n#######################\n'); */
