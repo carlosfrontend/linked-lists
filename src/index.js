@@ -28,10 +28,14 @@ console.log(myList.size());
 console.log(myList);
 myList.append('Mike');
 myList.append('Sarah');
-myList.append('Other');
+myList.append('Lewis');
+myList.prepend('Lara');
 console.log(myList);
 console.log('\n#### CONTAINS A VALUE ###\n');
-console.log(myList.contains('Joss'));
+console.log(myList.contains('Other'));
+console.log('\n####### FIND VALUE ######\n');
+console.log(myList.find('Lara'));
+console.log('\n#######################\n');
 
 
 /* console.log('\n#######################\n'); */
