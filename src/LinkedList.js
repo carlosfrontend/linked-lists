@@ -1,92 +1,99 @@
-import Node from "./Node.js";
+import Node from './Node.js';
 
 class LinkedList {
   constructor() {
-    this.head = null;
-    this.size = 0;
+    this.start = null;
+    this.length = 0;
   }
-
-  //   adds a new node containing value to the end of the list
 
   append(value) {
     const newNode = new Node(value);
-    if (this.head === null) {
-      this.head = newNode;
-      this.size += 1;
+    if (this.start === null) {
+      this.start = newNode;
     } else {
-      let currentValue = this.head;
-      while (currentValue.nextNode !== null) {
-        currentValue = currentValue.nextNode;
+      let current = this.start;
+      while (current.nextNode !== null) {
+        current = current.nextNode;
       }
 
-      currentValue.nextNode = newNode;
-      this.size += 1;
+      current.nextNode = newNode;
     }
+    this.length += 1;
   }
 
-  //   adds a new node containing value to the start of the list
   prepend(value) {
     const newNode = new Node(value);
-    if (this.head === null) {
-      this.head = newNode;
+    if (this.start === null) {
+      this.start = newNode;
     } else {
-      const currentValue = this.head;
-      this.head = newNode;
-      this.head.nextNode = currentValue;
+      const current = this.start;
+      this.start = newNode;
+      this.start.nextNode = current;
     }
-    this.size += 1;
+    this.length += 1;
   }
 
-  getSize() {
-    return `Linked List Size ==> ${this.size}`;
+  size() {
+    return `The Linked List has a size of ${this.length} Nodes`;
   }
 
-  getHead() {
-    const { head } = this;
-    return `HEAD is ==> ${head.value}`;
+  head() {
+    if (this.start === null) {
+      return `HEAD is ${this.start}`;
+    }
+    return `HEAD is ${this.start.value}`;
   }
 
-  getTail() {
-    let currentValue = this.head;
+  tail() {
     let tail = null;
+    let current = this.start;
 
-    while (currentValue.nextNode !== null) {
-      currentValue = currentValue.nextNode;
-      tail = currentValue;
+    if (this.start === null) {
+      return `TAIL is ${tail}`;
     }
 
-    return `TAIL is ==> ${tail.value}`;
+    while (current.nextNode !== null) {
+      current = current.nextNode;
+    }
+    current.nextNode = tail;
+    tail = current;
+    return `TAIL is ${tail.value}`;
   }
 
-  getNodeAt(index) {
-    let msg = "";
-    let currentValue = this.head;
+  at(index) {
+    let current = this.start;
+    let count = 0;
+    let msg = '';
 
-    if (index === 0) {
-      msg += `The Node in the index ${index} is ==> ${currentValue.value} `;
-      return msg;
-    } else if (index === 1) {
-      currentValue = currentValue.nextNode;
-      msg += `The Node in the index ${index} is ==> ${currentValue.value} `;
-      return msg;
-    }
-
-    if (index > this.size - 1 || index < 0) {
-      currentValue = null;
-      msg += `The Node in the index ${index} is ==> ${currentValue} `;
-      return msg;
-    } else {
-      if (index >= 2) {
-        this.head = currentValue;
-        currentValue = this.head.nextNode;
-        currentValue = currentValue.nextNode;
-        msg += `The Node in the index ${index} is ==> ${currentValue.value} `;
-       
+    while (current !== null) {
+      if (count === index) {
+        msg = `The Node at index ${index} is ${current.value}`;
+        return msg;
       }
+      count += 1;
+      current = current.nextNode;
+    }
+    msg = `The Node at index ${index} is ${current}`;
+    return msg;
+  }
+
+  pop() {
+    let current = this.start;
+
+    for (let i = 0; i < this.length - 2; i += 1) {
+      current = current.nextNode;
     }
 
-   
-    return msg;
+    if (this.length <= 1) {
+     this.start = null;
+     this.length = 0;
+      return this.start;
+    }
+
+    current.nextNode = null;
+    this.length -= 1;
+
+    return JSON.stringify(this);
   }
 }
 

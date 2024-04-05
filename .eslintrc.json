@@ -10,16 +10,17 @@
   },
   "rules": {
     "no-console": "off",
+    "semi":"error",
+    "import/extensions":[
+      "error",
+      {"js": "always"}
+
+    ],
     "quotes": [
       "error",
       "single",
       { "avoidEscape": true, "allowTemplateLiterals": false }
-    ],
-    "import/extensions":[
-      "severity",
-      "never"
-    ],
-
-    "semi":"error"
+    ]
+    
   }
 }
