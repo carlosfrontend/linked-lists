@@ -35,7 +35,8 @@ console.log('\n#### CONTAINS A VALUE ###\n');
 console.log(myList.contains('Other'));
 console.log('\n####### FIND VALUE ######\n');
 console.log(myList.find('Lara'));
-console.log('\n#######################\n');
-
+console.log('\n####### TO STRING #######\n');
+console.log(myList.toString());
+console.log('\n#######################\n'); 
 
 /* console.log('\n#######################\n'); */

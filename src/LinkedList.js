@@ -108,17 +108,19 @@ class LinkedList {
   contains(value) {
     let result = false;
     let current = this.start;
-
-    if (value === current.value) {
-      result = true;
-    } else {
-      while (current.nextNode !== null) {
-        current = current.nextNode;
-        if (current.value === value) {
-          result = true;
+    if(current !== null){
+      if (value === current.value) {
+        result = true;
+      } else {
+        while (current.nextNode !== null) {
+          current = current.nextNode;
+          if (current.value === value) {
+            result = true;
+          }
         }
       }
     }
+   
 
     return result;
   }
@@ -153,6 +155,34 @@ class LinkedList {
 
     msg = `The index of ${value} is ${result}`;
     return msg;
+  }
+
+  toString(){
+    let msg = '';
+    let current = this.start;
+    const arrayOfValues = [];
+
+   if(current !== null){
+    arrayOfValues[0] = this.start.value;
+   }
+
+
+    for(let i = 1; i < this.length; i+= 1){
+      current = current.nextNode;
+      arrayOfValues.push(current.value);
+    }
+
+    arrayOfValues.push(null);
+
+    for(let i = 0; i < arrayOfValues.length -1; i+=1){
+     if(arrayOfValues[arrayOfValues.length -2] !== null){
+      msg += `( ${arrayOfValues[i]} ) -> `;
+     }
+    }
+
+    msg+= arrayOfValues[arrayOfValues.length -1];
+    return msg;
+   
   }
 }
 
