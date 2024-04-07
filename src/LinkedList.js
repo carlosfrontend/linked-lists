@@ -1,3 +1,4 @@
+
 import Node from './Node.js';
 
 class LinkedList {
@@ -108,7 +109,7 @@ class LinkedList {
   contains(value) {
     let result = false;
     let current = this.start;
-    if(current !== null){
+    if (current !== null) {
       if (value === current.value) {
         result = true;
       } else {
@@ -120,7 +121,6 @@ class LinkedList {
         }
       }
     }
-   
 
     return result;
   }
@@ -157,33 +157,62 @@ class LinkedList {
     return msg;
   }
 
-  toString(){
+  toString() {
     let msg = '';
     let current = this.start;
     const arrayOfValues = [];
 
-   if(current !== null){
-    arrayOfValues[0] = this.start.value;
-   }
+    if (current !== null) {
+      arrayOfValues[0] = this.start.value;
+    }
 
-
-    for(let i = 1; i < this.length; i+= 1){
+    for (let i = 1; i < this.length; i += 1) {
       current = current.nextNode;
       arrayOfValues.push(current.value);
     }
 
     arrayOfValues.push(null);
 
-    for(let i = 0; i < arrayOfValues.length -1; i+=1){
-     if(arrayOfValues[arrayOfValues.length -2] !== null){
-      msg += `( ${arrayOfValues[i]} ) -> `;
-     }
+    for (let i = 0; i < arrayOfValues.length - 1; i += 1) {
+      if (arrayOfValues[arrayOfValues.length - 2] !== null) {
+        msg += `( ${arrayOfValues[i]} ) -> `;
+      }
     }
 
-    msg+= arrayOfValues[arrayOfValues.length -1];
+    msg += arrayOfValues[arrayOfValues.length - 1];
     return msg;
-   
   }
+
+  insertAt(value, index) {
+   if(index > 0 && index > this.length){
+    return;
+   }if(index < 0){
+    return;
+   }
+
+   if(index === 0){
+   
+    const current = this.start;
+    this.start = new Node(value, current);
+    this.length +=1;
+    return;
+   }
+
+   const newNode = new Node(value);
+   let prev; let curr;
+   curr = this.start;
+   let count = 0;
+
+   while(count < index){
+    prev = curr;
+    count+=1;
+    curr = curr.nextNode;
+   }
+   newNode.nextNode = curr;
+   prev.nextNode = newNode;
+   this.length += 1;
+  }
+  
 }
 
 export default LinkedList;

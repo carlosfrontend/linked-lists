@@ -7,8 +7,6 @@ myList.append('Second'); // 1
 myList.append('Third'); // 2
 myList.append('Four'); // 3
 
-
-
 console.log('\n######## SIZE ##########\n');
 console.log(myList.size());
 console.log('\n##### LINKED LIST ######\n');
@@ -29,14 +27,21 @@ console.log(myList);
 myList.append('Mike');
 myList.append('Sarah');
 myList.append('Lewis');
-myList.prepend('Lara');
+// myList.prepend('Lara');
 console.log(myList);
 console.log('\n#### CONTAINS A VALUE ###\n');
-console.log(myList.contains('Other'));
+console.log(myList.contains('Lewis'));
 console.log('\n####### FIND VALUE ######\n');
-console.log(myList.find('Lara'));
+console.log(myList.find('Lewis'));
 console.log('\n####### TO STRING #######\n');
 console.log(myList.toString());
-console.log('\n#######################\n'); 
+console.log('\n######## INSERT AT #######\n');
+myList.insertAt('new Value', 4);
+console.log(myList.toString());
+console.log('\n#######################\n');
+console.log('\n###### REMOVE AT ######\n');
+myList.removeAt(0);
+console.log(myList.toString());
+console.log('\n#######################\n');
 
 /* console.log('\n#######################\n'); */
