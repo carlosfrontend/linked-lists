@@ -96,13 +96,13 @@ class LinkedList {
     if (this.length <= 1) {
       this.start = null;
       this.length = 0;
-      return this.start;
+      return  this.toString();
     }
 
     current.nextNode = null;
     this.length -= 1;
 
-    return JSON.stringify(this);
+    return this.toString();
   }
 
   contains(value) {

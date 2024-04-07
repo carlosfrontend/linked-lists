@@ -2,15 +2,15 @@ import LinkedList from './LinkedList.js';
 
 const myList = new LinkedList();
 
-myList.append('First'); // 0
-myList.append('Second'); // 1
-myList.append('Third'); // 2
-myList.append('Four'); // 3
+myList.append('First');
+myList.append('Second');
+myList.append('Third');
+myList.append('Four');
 
 console.log('\n######## SIZE ##########\n');
 console.log(myList.size());
 console.log('\n##### LINKED LIST ######\n');
-console.log(myList);
+console.log(myList.toString());
 console.log('\n####### HEAD ###########\n');
 console.log(myList.head());
 console.log('\n######## TAIL ############\n');
@@ -23,11 +23,10 @@ console.log(myList.pop());
 console.log(myList.pop());
 console.log(myList.pop());
 console.log(myList.size());
-console.log(myList);
 myList.append('Mike');
 myList.append('Sarah');
 myList.append('Lewis');
-// myList.prepend('Lara');
+myList.prepend('Lara');
 console.log('\n#### CONTAINS A VALUE ###\n');
 console.log(myList.contains('Lewis'));
 console.log('\n####### FIND VALUE ######\n');
@@ -40,9 +39,8 @@ console.log(myList.toString());
 console.log('\n#######################\n');
 console.log('\n###### REMOVE AT ######\n');
 myList.removeAt(2);
+console.log(myList.toString());
 myList.removeAt(0);
 console.log(myList.toString());
 console.log(myList.size());
 console.log('\n#######################\n');
-
-/* console.log('\n#######################\n'); */
