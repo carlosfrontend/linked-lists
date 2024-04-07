@@ -1,4 +1,3 @@
-
 import Node from './Node.js';
 
 class LinkedList {
@@ -158,61 +157,84 @@ class LinkedList {
   }
 
   toString() {
-    let msg = '';
+    let count = 0;
     let current = this.start;
-    const arrayOfValues = [];
+    let msg = '';
 
-    if (current !== null) {
-      arrayOfValues[0] = this.start.value;
+    if (this.start) {
+      msg = `( ${current.value} ) -> `;
     }
-
-    for (let i = 1; i < this.length; i += 1) {
+    while (count < this.length && current.nextNode) {
       current = current.nextNode;
-      arrayOfValues.push(current.value);
+      msg += `( ${current.value} ) -> `;
+      count += 1;
     }
 
-    arrayOfValues.push(null);
+    msg += null;
 
-    for (let i = 0; i < arrayOfValues.length - 1; i += 1) {
-      if (arrayOfValues[arrayOfValues.length - 2] !== null) {
-        msg += `( ${arrayOfValues[i]} ) -> `;
-      }
-    }
-
-    msg += arrayOfValues[arrayOfValues.length - 1];
     return msg;
   }
 
   insertAt(value, index) {
-   if(index > 0 && index > this.length){
-    return;
-   }if(index < 0){
-    return;
-   }
+    if (index > 0 && index > this.length) {
+      return;
+    }
+    if (index < 0) {
+      return;
+    }
 
-   if(index === 0){
-   
-    const current = this.start;
-    this.start = new Node(value, current);
-    this.length +=1;
-    return;
-   }
+    if (index === 0) {
+      const current = this.start;
+      this.start = new Node(value, current);
+      this.length += 1;
+      return;
+    }
 
-   const newNode = new Node(value);
-   let prev; let curr;
-   curr = this.start;
-   let count = 0;
+    const newNode = new Node(value);
+    let prev;
+    let curr;
+    curr = this.start;
+    let count = 0;
 
-   while(count < index){
-    prev = curr;
-    count+=1;
-    curr = curr.nextNode;
-   }
-   newNode.nextNode = curr;
-   prev.nextNode = newNode;
-   this.length += 1;
+    while (count < index) {
+      prev = curr;
+      count += 1;
+      curr = curr.nextNode;
+    }
+    newNode.nextNode = curr;
+    prev.nextNode = newNode;
+    this.length += 1;
   }
-  
+
+  removeAt(index) {
+    if (index === undefined || this.length === 0) {
+      return -1;
+    }
+    if (index > 0 && index >= this.length) {
+      return -1;
+    }
+    if (index < 0) {
+      return -1;
+    }
+
+    let current = this.start;
+    let previous;
+    let count = 0;
+
+    if (index === 0 && this.start) {
+      this.start = current.nextNode;
+    } else {
+      while (count < index) {
+        count += 1;
+        previous = current;
+        current = current.nextNode;
+      }
+      previous.nextNode = current.nextNode;
+    }
+
+    this.length -= 1;
+    return null;
+  }
 }
 
 export default LinkedList;

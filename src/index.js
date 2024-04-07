@@ -28,7 +28,6 @@ myList.append('Mike');
 myList.append('Sarah');
 myList.append('Lewis');
 // myList.prepend('Lara');
-console.log(myList);
 console.log('\n#### CONTAINS A VALUE ###\n');
 console.log(myList.contains('Lewis'));
 console.log('\n####### FIND VALUE ######\n');
@@ -40,8 +39,10 @@ myList.insertAt('new Value', 4);
 console.log(myList.toString());
 console.log('\n#######################\n');
 console.log('\n###### REMOVE AT ######\n');
+myList.removeAt(2);
 myList.removeAt(0);
 console.log(myList.toString());
+console.log(myList.size());
 console.log('\n#######################\n');
 
 /* console.log('\n#######################\n'); */
